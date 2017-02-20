@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/aladdin_lamp_green.png</file>
+        <file>res/Aladdin_lamp_red.png</file>
+        <file>res/gtk-refresh.png</file>
+        <file>res/mobile_data_48px.png</file>
+    </qresource>
+</RCC>

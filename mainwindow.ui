@@ -1,0 +1,694 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>651</width>
+    <height>651</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>串口调试助手 (作者evening_wen)</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/res/mobile_data_48px.png</normaloff>:/res/mobile_data_48px.png</iconset>
+  </property>
+  <property name="statusTip">
+   <string/>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_6">
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="serialPortSettingGroupBox">
+      <property name="statusTip">
+       <string>串口设置</string>
+      </property>
+      <property name="title">
+       <string>串口设置</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="4" column="0">
+        <layout class="QFormLayout" name="stopBitormLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="stopBitLabel">
+           <property name="statusTip">
+            <string>停止位</string>
+           </property>
+           <property name="text">
+            <string>停止位</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="stopBitComboBox">
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="5" column="0">
+        <widget class="QPushButton" name="openSerialPortBtn">
+         <property name="font">
+          <font>
+           <family>AcadEref</family>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="statusTip">
+          <string>串口打开/关闭</string>
+         </property>
+         <property name="text">
+          <string>打开串口</string>
+         </property>
+         <property name="icon">
+          <iconset resource="resource.qrc">
+           <normaloff>:/res/Aladdin_lamp_red.png</normaloff>:/res/Aladdin_lamp_red.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <layout class="QFormLayout" name="parityBitormLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="parityBitLabel">
+           <property name="statusTip">
+            <string>数据位</string>
+           </property>
+           <property name="text">
+            <string>校验位</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="parityBitComboBox">
+           <item>
+            <property name="text">
+             <string>None</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Odd</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Even</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Mark</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Space</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="2" column="0">
+        <layout class="QFormLayout" name="dataBitormLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="dataBitLabel">
+           <property name="statusTip">
+            <string>校验位</string>
+           </property>
+           <property name="text">
+            <string>数据位</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="dataBitComboBox">
+           <item>
+            <property name="text">
+             <string>8</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>7</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>6</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>5</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0">
+        <layout class="QHBoxLayout" name="portNameHorizontalLayout">
+         <item>
+          <widget class="QLabel" name="portNameberLabel">
+           <property name="statusTip">
+            <string>串口号</string>
+           </property>
+           <property name="text">
+            <string>串口号</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="portNameComboBox"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="portNameRefreshBtn">
+           <property name="text">
+            <string>刷新串口</string>
+           </property>
+           <property name="icon">
+            <iconset resource="resource.qrc">
+             <normaloff>:/res/gtk-refresh.png</normaloff>:/res/gtk-refresh.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <layout class="QFormLayout" name="baudRateFormLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="baudRateLabel">
+           <property name="statusTip">
+            <string>波特率</string>
+           </property>
+           <property name="text">
+            <string>波特率</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QComboBox" name="baudRateComboBox">
+           <property name="editable">
+            <bool>false</bool>
+           </property>
+           <property name="currentText">
+            <string>115200</string>
+           </property>
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>115200</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>57600</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>38400</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>19200</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>9600</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>4800</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2400</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1200</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QGroupBox" name="dataRuleGroupBox">
+      <property name="title">
+       <string>数据规则</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_8">
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="dataSuffixHorizontalLayout">
+         <item>
+          <widget class="QLabel" name="dataSuffixLabel">
+           <property name="text">
+            <string>后缀规则</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="dataSuffixComboBox">
+           <property name="editable">
+            <bool>false</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>None</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>\r</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>\n</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>\r\n</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <spacer name="dataRuleHorizontalSpacer2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="0" column="0">
+        <layout class="QHBoxLayout" name="dataPrefixHorizontalLayout">
+         <item>
+          <widget class="QLabel" name="dataPrefixLabel">
+           <property name="text">
+            <string>前缀规则</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="dataPrefixComboBox">
+           <property name="editable">
+            <bool>true</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>None</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <spacer name="dataRuleHorizontalSpacer1">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1" rowspan="6">
+     <widget class="QGroupBox" name="dataReceiveAreaGroupBox">
+      <property name="title">
+       <string>接收-发送 数据显示区</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QTextBrowser" name="dataReceiveAreaTextBrowser">
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="0" rowspan="2">
+     <widget class="QGroupBox" name="receiveGroupBox">
+      <property name="statusTip">
+       <string>接收区设置</string>
+      </property>
+      <property name="title">
+       <string>接收区设置</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="0" colspan="2">
+        <widget class="QCheckBox" name="nextLineShowCheckBox">
+         <property name="statusTip">
+          <string>自动换行显示</string>
+         </property>
+         <property name="text">
+          <string>自动换行显示</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <widget class="QCheckBox" name="hexShowCheckBox">
+         <property name="statusTip">
+          <string>十六进制显示</string>
+         </property>
+         <property name="text">
+          <string>十六进制显示</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QPushButton" name="clearReceiveBtn">
+         <property name="statusTip">
+          <string>清空接收区域</string>
+         </property>
+         <property name="text">
+          <string>清空接收</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QCheckBox" name="showReceiveTimeCheckBox">
+         <property name="statusTip">
+          <string>显示接收时间</string>
+         </property>
+         <property name="text">
+          <string>显示接收时间</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="QCheckBox" name="stopReceiveCheckBox">
+         <property name="statusTip">
+          <string>暂停接收显示</string>
+         </property>
+         <property name="text">
+          <string>暂停接收显示</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="2">
+        <widget class="QCheckBox" name="dataSaveToFileCheckBox">
+         <property name="statusTip">
+          <string>接收转向文件...</string>
+         </property>
+         <property name="text">
+          <string>接收转向文件...</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QPushButton" name="saveDataBtn">
+         <property name="statusTip">
+          <string>保存数据至文件</string>
+         </property>
+         <property name="text">
+          <string>保存数据</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="6" column="0" rowspan="2">
+     <widget class="QGroupBox" name="sendGroupBox">
+      <property name="statusTip">
+       <string>发送区设置</string>
+      </property>
+      <property name="title">
+       <string>发送区设置</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="9" column="0">
+        <widget class="QPushButton" name="loadFileBtn">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="statusTip">
+          <string>载入文件</string>
+         </property>
+         <property name="text">
+          <string>载入文件</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0" colspan="2">
+        <widget class="QCheckBox" name="repeatSendCheckBox">
+         <property name="statusTip">
+          <string>数据流循环发送</string>
+         </property>
+         <property name="text">
+          <string>数据流循环发送</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QPushButton" name="clearSendAreaBtn">
+         <property name="statusTip">
+          <string>清空发送区</string>
+         </property>
+         <property name="text">
+          <string>清空输入</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="QCheckBox" name="clearSendAreaCheckBox">
+         <property name="statusTip">
+          <string>发送完自动清空发送区</string>
+         </property>
+         <property name="text">
+          <string>发送完自动清空</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="2">
+        <widget class="QCheckBox" name="hexSendAreaCheckBox">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="statusTip">
+          <string>按十六进制发送</string>
+         </property>
+         <property name="text">
+          <string>按十六进制发送</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="2">
+        <layout class="QFormLayout" name="flowFormLayout">
+         <item row="0" column="1">
+          <widget class="QCheckBox" name="RTScheckBox">
+           <property name="text">
+            <string>RTS</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="DTRcheckBox">
+           <property name="text">
+            <string>DTR</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="8" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="intervalTimeHorizontalLayout">
+         <item>
+          <widget class="QLabel" name="intervalTimeLabel">
+           <property name="statusTip">
+            <string>发送间隔</string>
+           </property>
+           <property name="text">
+            <string>发送间隔</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="intervalTimeLineEdit">
+           <property name="statusTip">
+            <string>指令发送及指令循环间隔</string>
+           </property>
+           <property name="text">
+            <string>1000</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="unitLabel">
+           <property name="text">
+            <string>ms</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QGroupBox" name="dataSendAreaGroupBox">
+      <property name="title">
+       <string>数据发送区</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QSplitter" name="dataSendAreaSplitter">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <widget class="QWidget" name="gridLayoutWidget_3">
+          <layout class="QGridLayout" name="dataSendAreaGridLayout1">
+           <item row="0" column="0">
+            <widget class="QTextEdit" name="dataSendAreaTextEdit">
+             <property name="statusTip">
+              <string>在此区域输入需要发送的内容</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QPushButton" name="sendBtn">
+          <property name="font">
+           <font>
+            <family>AcadEref</family>
+            <pointsize>18</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="statusTip">
+           <string>发送 Ctrl+Enter</string>
+          </property>
+          <property name="text">
+           <string>发送</string>
+          </property>
+          <property name="shortcut">
+           <string>Ctrl+Return</string>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>651</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>portNameComboBox</tabstop>
+  <tabstop>baudRateComboBox</tabstop>
+  <tabstop>dataBitComboBox</tabstop>
+  <tabstop>parityBitComboBox</tabstop>
+  <tabstop>stopBitComboBox</tabstop>
+  <tabstop>dataSaveToFileCheckBox</tabstop>
+  <tabstop>nextLineShowCheckBox</tabstop>
+  <tabstop>showReceiveTimeCheckBox</tabstop>
+  <tabstop>hexShowCheckBox</tabstop>
+  <tabstop>stopReceiveCheckBox</tabstop>
+  <tabstop>saveDataBtn</tabstop>
+  <tabstop>clearReceiveBtn</tabstop>
+  <tabstop>clearSendAreaCheckBox</tabstop>
+  <tabstop>hexSendAreaCheckBox</tabstop>
+  <tabstop>repeatSendCheckBox</tabstop>
+  <tabstop>intervalTimeLineEdit</tabstop>
+  <tabstop>loadFileBtn</tabstop>
+  <tabstop>clearSendAreaBtn</tabstop>
+  <tabstop>clearSendAreaBtn</tabstop>
+  <tabstop>clearSendAreaCheckBox</tabstop>
+  <tabstop>hexSendAreaCheckBox</tabstop>
+  <tabstop>repeatSendCheckBox</tabstop>
+  <tabstop>loadFileBtn</tabstop>
+  <tabstop>dataSaveToFileCheckBox</tabstop>
+  <tabstop>nextLineShowCheckBox</tabstop>
+  <tabstop>showReceiveTimeCheckBox</tabstop>
+  <tabstop>hexShowCheckBox</tabstop>
+  <tabstop>stopReceiveCheckBox</tabstop>
+  <tabstop>saveDataBtn</tabstop>
+  <tabstop>portNameComboBox</tabstop>
+  <tabstop>stopBitComboBox</tabstop>
+  <tabstop>baudRateComboBox</tabstop>
+  <tabstop>parityBitComboBox</tabstop>
+  <tabstop>clearReceiveBtn</tabstop>
+  <tabstop>intervalTimeLineEdit</tabstop>
+  <tabstop>dataBitComboBox</tabstop>
+ </tabstops>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
